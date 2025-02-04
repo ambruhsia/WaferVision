@@ -3,8 +3,9 @@ import numpy as np
 import pickle
 import matplotlib.pyplot as plt
 from xgboost import Booster
+import pandas as pd
+# from uhm import preprocess_wafer_data
 
-from flask import Flask, render_template, request
 import pickle
 import numpy as np
 from xgboost import XGBClassifier, Booster
@@ -18,6 +19,7 @@ from skimage import measure
 from scipy import interpolate
 from scipy import stats
  
+
 
 def preprocess_wafer_data(x):
     """
@@ -138,14 +140,18 @@ def preprocess_wafer_data(x):
     return X
 
 
-
 def plot_wafer_map(wafer_map):
-    fig, ax = plt.subplots(figsize=(5, 5))
+    fig, ax = plt.subplots(figsize=(3, 3))  # Adjust figure size
     ax.imshow(wafer_map, cmap='gray', interpolation='nearest')
-    ax.set_title("Wafer Map Input", fontsize=14)
+    ax.set_title("Wafer Map Input", fontsize=8)  # Reduce title font size
     ax.set_xticks([])
     ax.set_yticks([])
-    st.pyplot(fig)
+    
+    # Center the plot in a narrow container
+    col1, col2, col3 = st.columns([1, 2, 1])  
+    with col2:
+        st.pyplot(fig)
+
 
 st.set_page_config(page_title="WaferMap Defect Detection", layout="wide", page_icon="🔬")
 
@@ -174,6 +180,7 @@ st.header("📝 Input Wafer Map Data")
 
 x = st.text_area("Enter Wafer Map Data", height=150, placeholder="[[0, 1, 0], [1, 0, 1], [0, 1, 0]]")
 
+
 if "prediction" not in st.session_state:
     st.session_state.prediction = None
     st.session_state.wafer_shape = None
@@ -190,6 +197,18 @@ def predict():
         st.session_state.wafer_map = None
 
 st.button("🔍 Predict", on_click=predict)
+mapping_type = {
+    'Center': 0, 'Donut': 1, 'Edge-Loc': 2, 'Edge-Ring': 3, 'Loc': 4,
+    'Random': 5, 'Scratch': 6, 'Near-full': 7, 'None': 8
+}
+
+# Convert mapping dictionary to DataFrame for better visualization
+mapping_df = pd.DataFrame(list(mapping_type.items()), columns=['Defect Type', 'Label'])
+
+# Display Mapping Table
+st.header("🗺️ Defect Type Mapping")
+st.table(mapping_df)
+
 
 if st.session_state.prediction is not None:
     st.markdown("---")
