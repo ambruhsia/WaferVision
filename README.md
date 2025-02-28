@@ -70,6 +70,8 @@ A sample wafer dataset is provided in sample_data.txt(Edge-Ring) for testing the
 
 ![1738682139616](https://github.com/user-attachments/assets/026b66b7-e3d9-4d1c-b672-b0e8830c67ae)
 
+![image](https://github.com/user-attachments/assets/8354dfb9-747c-4f67-b6f3-e44ee415a81f)
+
 
 
 
