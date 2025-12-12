@@ -36,28 +36,38 @@ semicon-wafer-inspect/
 ```
 
 ## 🚀 Installation & Usage
-### Prerequisites
-Ensure you have Python installed (>=3.8). Install dependencies:
+
+### Step 1: Clone the Repository
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/<your-username>/semicon-wafer-inspect.git
+cd semicon-wafer-inspect
+```
+Step 2: (Optional) Create and Activate a Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
 ```
 
-### Running the Model
-To deploy the wafer defect detection system:
+Step 3: Install Dependencies
+Ensure you have Python installed (>=3.8), then run:
+
 ```bash
+
+pip install -r requirements.txt
+```
+Running the Model
+To deploy the wafer defect detection system:
+
+```bash
+ 
 python deployy.py
 ```
 To explore the dataset and analysis:
+
 ```bash
+ 
 jupyter notebook wm-811k-wafermap.ipynb
 ```
-
-### Running the Web App
-To launch the interactive Streamlit app (or simply go to https://semicon-wafer-inspectt-ambruhsiaa.streamlit.app/):
-```bash
-streamlit run deployy.py
-```
-
 ## 🛠 Model Training & Experiment Tracking
 - The XGBoost model was trained on the **WM-811K wafer dataset**, achieving 92% accuracy.
 - Preprocessing includes **Radon Transform**, **Hough Transform**, and **region-based segmentation** for feature extraction.
