@@ -39,7 +39,7 @@ semicon-wafer-inspect/
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/semicon-wafer-inspect.git
+git clone https://github.com/ambruhsia/WaferVision.git
 cd semicon-wafer-inspect
 ```
 Step 2: (Optional) Create and Activate a Virtual Environment
