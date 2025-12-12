@@ -74,7 +74,7 @@ jupyter notebook wm-811k-wafermap.ipynb
 
 ## 📊 Sample Data for Testing
 
-A sample wafer dataset is provided in sample_data.txt(Edge-Ring) for testing the model, or you can get it from WM-811k Wafermap dataset.
+A sample wafer dataset is provided in sample_data.txt(Edge-Ring) for testing the model, or you can get/extract it from WM-811k Wafermap dataset.
 ![1738683624411](https://github.com/user-attachments/assets/b05f328a-3272-4519-a234-00dc17c35c60)
 
 ![1738682139616](https://github.com/user-attachments/assets/026b66b7-e3d9-4d1c-b672-b0e8830c67ae)
