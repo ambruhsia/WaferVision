@@ -1,4 +1,3 @@
-# semicon-wafer-inspect
 # WaferVision: Semiconductor Wafer Defect Detection
 
 ## 📌 Project Overview
